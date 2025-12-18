@@ -1,0 +1,14 @@
+.\" Manpage for simple shell
+.TH man 1 "17 Dec 2025" "1.0" "simple shell man page"
+.TH SIMPLE SHELL 1
+.SH NAME
+simple shell \- Je ne sais pas quoi mettre pour le moment
+.SH SYNOPSIS
+.B command
+-Option(s)
+.SH  DESCRIPTION
+Le
+.I simple shell
+est un
+.B interpréteur de commandes
+destiné aux systèmes d'exploitation Unix et de type Unix qui permet d'accéder aux fonctionnalités internes du système d'exploitation.
