@@ -1,2 +1,13 @@
+# Exécutables
+a.out
+*.out
+sh
+hsh
+
+# Fichiers objets et temporaires
+*.o
+*.swp
+*~
+
+# Dossiers de debug ou logs
 *.log
-*main.c

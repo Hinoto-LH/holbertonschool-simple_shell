@@ -3,7 +3,7 @@
 
 int main ()
 {
-	char myStr[] = "Valentin est un noob";
+	char myStr[] = "J'aime la bite";
 
 	char * myPtr = strtok(myStr, " ");
 
