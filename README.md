@@ -12,7 +12,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89
 
 Flowchart diagram : 
 
-![DiagrammeSimpleShell](https://github.com/user-attachments/assets/5d67c50e-faed-416f-ab1c-d57058e79ba2)
+https://app.diagrams.net/#G11idrkswVrkkmDisdUvVTRWsMGuwUkqDt#%7B%22pageId%22%3A%22JNbFtnHadvIHqoEtx2ze%22%7D
 
 Requirements : 
 
@@ -87,6 +87,7 @@ Authors :
 
 - @Axel MASSERRON : https://github.com/Hinoto-LH
 - @Valentin PASQUIET : https://github.com/ValPQT
+
 
 
 
