@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/wait.h>
-#include <string.h>
-
-extern char **environ;
+#include "shell.h"
 
 int main(void)
 {
@@ -17,7 +11,10 @@ int main(void)
 	while (1)
 	{
 		/* 1. afficher le prompt */
+		if (isatty(STDIN_FILENO))
+		{
 		write(STDOUT_FILENO, "$ ", 2);
+		}
 
 		/* 2. lire la commande */
 		if (getline(&line, &len, stdin) == -1)
