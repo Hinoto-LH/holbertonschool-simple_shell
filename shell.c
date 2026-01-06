@@ -2,11 +2,8 @@
 
 int main(void)
 {
-	char *line = NULL;
 	size_t len = 0;
-	pid_t pid;
-	int status;
-	char *argv[2];
+	char *line = NULL;
 
 	while (1)
 	{
@@ -20,6 +17,7 @@ int main(void)
 		if (getline(&line, &len, stdin) == -1)
 		{
 			/* Ctrl + D (EOF) */
+			if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
@@ -30,35 +28,14 @@ int main(void)
 		/* 4. si ligne vide, afficher à nouveau le prompt */
 		if (line[0] == '\0')
 			continue;
-
-		/* 5. créer un processus */
-		pid = fork();
-
-		if (pid == -1)
 		{
-			perror("fork");
-			continue;
-		}
 
-		/* 6. processus enfant */
-		if (pid == 0)
-		{
-			argv[0] = line;
-			argv[1] = NULL;
+		char **argv = tokenizer(line);
 
-			execve(line, argv, environ);
-
-			/* execve échoue */
-			perror("execve");
-			exit(1);
-		}
-		else
-		{
-			/* 7. processus parent */
-			wait(&status);
+		initializer(argv, EXTERNAL_COMMAND);
+		free(argv);
 		}
 	}
-
 	free(line);
 	return (0);
 }
