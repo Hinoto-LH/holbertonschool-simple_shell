@@ -17,7 +17,9 @@ extern char **environ;
 #define EXTERNAL_COMMAND 1
 #define INTERNAL_COMMAND 2
 
+
 void initializer(char **current_command, int type_command);
 void execute_command(char **current_command, int type_command);
+char **tokenizer(char *line);
 
 #endif

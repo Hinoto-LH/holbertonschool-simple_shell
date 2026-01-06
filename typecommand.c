@@ -15,7 +15,15 @@ void initializer(char **current_command, int type_command)
 
 	if (type_command == EXTERNAL_COMMAND || type_command == INTERNAL_COMMAND)
 	{
+		/* créer un processus */
 		PID = fork();
+
+			if (PID == -1)
+		{
+			perror("fork");
+		}
+
+		/* processus enfant */
 		if (PID == 0)
 			execute_command(current_command, type_command);
 		else
