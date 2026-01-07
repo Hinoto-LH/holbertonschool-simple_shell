@@ -35,7 +35,7 @@ int main(void)
 		{
 			perror("fork");
 			continue;
-		}
+		}*/
 
 		/* 4. processus enfant */
 		if (pid == 0)

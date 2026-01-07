@@ -21,5 +21,7 @@ extern char **environ;
 void initializer(char **current_command, int type_command);
 void execute_command(char **current_command, int type_command);
 char **tokenizer(char *line);
+char *_getenv(const char *name);
+char *find_in_path(char *cmd);
 
 #endif
