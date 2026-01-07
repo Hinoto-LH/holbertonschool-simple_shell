@@ -7,7 +7,7 @@
 int main(void)
 {
 	size_t len = 0;
-	char *line = NULL;
+	char *line = NULL, *path_cmd;
 
 	while (1)
 	{
@@ -36,8 +36,21 @@ int main(void)
 
 		char **argv = tokenizer(line);
 
-		initializer(argv, EXTERNAL_COMMAND);
-		free(argv);
+		if (argv[0] != NULL) /* Si le nom contient un slash direct */
+		{
+			if (strchr(argv[0], '/') != NULL)
+				path_cmd = strdup(argv[0]); /* chemin donné directement*/
+			else
+				path_cmd = find_in_path(argv[0]);
+
+			if (path_cmd != NULL)
+			{
+				argv[0] = path_cmd;
+				initializer(argv, EXTERNAL_COMMAND);
+				free(path_cmd);
+		}
+	}
+			free(argv);
 		}
 	}
 	free(line);
