@@ -1,9 +1,12 @@
 #include "shell.h"
 
 /**
- * builtin_env - prints the environment
+ * builtin_env - prints the current environment
  *
- * Return: 0 on success
+ * Description: This function prints all the environment variables
+ * one per line, using the global variable environ.
+ *
+ * Return: Always 0 (success)
  */
 int builtin_env(void)
 {

@@ -1,10 +1,16 @@
 #include "shell.h"
 
-/*
-* tokenizer: découpe une ligne en mots, c'est moi qui te découpe si tu passes pas la Betty
-* @line : la ligne à analyser
-* return un tableau de chaînes avec les tokens, terminé par NULL
-*/
+/**
+ * tokenizer - splits a line into tokens
+ * @line: input string to be tokenized
+ *
+ * Description: This function splits the input line into tokens using
+ * spaces and tabs as delimiters. It dynamically allocates memory for
+ * the array of tokens and resizes it as needed.
+ *
+ * Return: Pointer to a NULL-terminated array of strings
+ */
+
 char **tokenizer(char *line)
 {
 

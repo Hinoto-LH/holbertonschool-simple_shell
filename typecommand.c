@@ -1,12 +1,16 @@
 #include "shell.h"
 
 /**
- * initializer - starts executing everything
- * @current_command: try to check current token
- * @type_command: parse token
+ * initializer - initializes the execution of a command
+ * @current_command: array containing the command and its arguments
+ * @type_command: type of the command to be executed
  *
- * Return: void function
+ * Description: This function determines how a command should be
+ * executed based on its type and prepares it for execution.
+ *
+ * Return: Nothing
  */
+
 
 void initializer(char **current_command, int type_command)
 {
