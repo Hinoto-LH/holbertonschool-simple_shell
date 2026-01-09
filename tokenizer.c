@@ -10,7 +10,6 @@
  *
  * Return: Pointer to a NULL-terminated array of strings
  */
-
 char **tokenizer(char *line)
 {
 

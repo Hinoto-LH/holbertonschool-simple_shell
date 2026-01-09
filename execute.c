@@ -11,7 +11,6 @@
  *
  * Return: Nothing
  */
-
 void execute_command(char **current_command, int type_command)
 {
 	(void)type_command;
