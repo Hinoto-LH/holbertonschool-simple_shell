@@ -34,15 +34,15 @@ int main(void)
 			continue;
 		{
 
-		char **argv = tokenizer(line);
+			char **argv = tokenizer(line);
 
-		if (argv[0] != NULL) /* Si le nom contient un slash direct */
-		{
-			if (strcmp (argv[0], "exit") == 0)
-			break;
+			if (argv[0] != NULL) /* Si le nom contient un slash direct */
+			{
+				if (strcmp (argv[0], "exit") == 0)
+				break;
 
-			if (strchr(argv[0], '/') != NULL)
-				path_cmd = strdup(argv[0]); /* chemin donné directement*/
+				if (strchr(argv[0], '/') != NULL)
+					path_cmd = strdup(argv[0]); /* chemin donné directement*/
 			else
 				path_cmd = find_in_path(argv[0]);
 
@@ -52,11 +52,7 @@ int main(void)
 				initializer(argv, EXTERNAL_COMMAND);
 				free(path_cmd);
 			}
-		else
-		{
-			fprintf(stderr, "%s: command not found\n", argv[0]);
 		}
-	}
 			free(argv);
 		}
 	}
