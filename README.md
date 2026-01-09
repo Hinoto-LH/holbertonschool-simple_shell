@@ -1,20 +1,26 @@
-Title
+## Title
 
 C - Simple Shell 
 
-Description of the project :
+## Description of the project :
 
 The project consists of creating a simple shell that executes simple commands in differents versions.
 
-Command used for compiling :
+---
+
+## Command used for compiling :
 
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89
 
-Flowchart diagram : 
+---
+
+## Flowchart diagram : 
 
 <img width="1221" height="1858" alt="DiagrammeSimpleShell (1)" src="https://github.com/user-attachments/assets/1d83490e-b687-4cd0-9a87-58722654eb39" />
 
-Requirements : 
+---
+
+## Requirements : 
 
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -43,7 +49,9 @@ julien@ubuntu:/# echo "qwerty" | ./hsh
 julien@ubuntu:/# echo "qwerty" | ./././hsh
 ./././hsh: 1: qwerty: not found
 
-List of allowed functions and system calls+ :
+---
+
+## List of allowed functions and system calls+ :
 
 - all functions from string.h
 - access (man 2 access)
@@ -83,10 +91,13 @@ List of allowed functions and system calls+ :
 - wait4 (man 2 wait4)
 - write (man 2 write)
 
-Authors :
+---
+
+## Authors :
 
 - @Axel MASSERRON : https://github.com/Hinoto-LH
 - @Valentin PASQUIET : https://github.com/ValPQT
+
 
 
 
