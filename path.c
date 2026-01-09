@@ -1,9 +1,16 @@
 #include "shell.h"
 
 /**
-* @find_in_path: Trouve la commande dans le chemin
-*
-*/
+ * find_in_path - finds a command in the PATH environment variable
+ * @cmd: command to search for
+ *
+ * Description: This function searches for the given command in each
+ * directory listed in the PATH environment variable. It builds the
+ * full path for the command and checks if it exists and is executable.
+ *
+ * Return: Pointer to the full path of the executable if found,
+ * or NULL if the command is not found or an error occurs
+ */
 char *find_in_path(char *cmd)
 {
 	char *path_env, *path_copy, *dir, *full_path;
