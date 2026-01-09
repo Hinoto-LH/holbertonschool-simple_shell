@@ -27,6 +27,5 @@ char *find_in_path(char *cmd);
 char **split_line(char *line);
 int builtin_env(void);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-int _atoi(const char *str);
 
 #endif
