@@ -23,11 +23,9 @@ char *_getenv(const char *name)
 	{
 		j = 0;
 
-		/* comparer name avec le début de environ[i] */
 		while (name[j] && environ[i][j] && name[j] == environ[i][j])
 			j++;
 
-		/* si name est entièrement parcouru et suivi d'un '=' */
 		if (name[j] == '\0' && environ[i][j] == '=')
 			return (&environ[i][j + 1]);
 

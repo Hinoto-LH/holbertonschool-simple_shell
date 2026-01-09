@@ -20,19 +20,19 @@ int main(void)
 
 	while (1)
 	{
-		if (isatty(STDIN_FILENO)) /* 1. afficher le prompt */
+		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$ ", 2);
 
-		if (getline(&line, &len, stdin) == -1) /* 2. lire la commande */
+		if (getline(&line, &len, stdin) == -1)
 		{
-			if (isatty(STDIN_FILENO)) /* Ctrl + D (EOF) */
+			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
 
-		line[strcspn(line, "\n")] = '\0'; /* 3. enlever le '\n' */
+		line[strcspn(line, "\n")] = '\0';
 
-		if (line[0] == '\0') /* 4. si ligne vide, afficher à nouveau le prompt */
+		if (line[0] == '\0')
 			continue;
 
 		argv = tokenizer(line);

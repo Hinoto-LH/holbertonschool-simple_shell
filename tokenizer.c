@@ -31,14 +31,12 @@ char **tokenizer(char *line)
 		args[index] = tok;
 		index++;
 
-		/* Si on dépasse la taille prévue, on réalloue plus d'espace */
 		if (index >= bufsize)
 		{
 			size_t old_size = bufsize * sizeof(char *);
 		    bufsize += 8;
 			new_size = bufsize * sizeof(char *);
 
-			/* On passe l'ancienne et la nouvelle taille */
 			args = _realloc(args, old_size, new_size);
 			if (args == NULL)
 			{
