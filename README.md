@@ -8,7 +8,7 @@ The project consists of creating a simple shell that executes simple commands in
 
 ## Command used for compiling :
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 ---
 
@@ -95,6 +95,7 @@ julien@ubuntu:/# echo "qwerty" | ./././hsh
 
 - @Axel MASSERRON : https://github.com/Hinoto-LH
 - @Valentin PASQUIET : https://github.com/ValPQT
+
 
 
 
