@@ -2,13 +2,50 @@
 .TH man 1 "17 Dec 2025" "1.0" "simple shell man page"
 .TH SIMPLE SHELL 1
 .SH NAME
-simple shell \- Je ne sais pas quoi mettre pour le moment
+simple shell \- JA custom command-line interpreter (shell) supporting environment and options
 .SH SYNOPSIS
-.B command
+.B ./hsh
 -Option(s)
 .SH  DESCRIPTION
-Le
 .I simple shell
-est un
-.B interpréteur de commandes
-destiné aux systèmes d'exploitation Unix et de type Unix qui permet d'accéder aux fonctionnalités internes du système d'exploitation.
+is a UNIX 
+.B command interpreter
+. It reads commands from standard input, parses them into tokens, and executes them. It handles both external programs and internal shell commands. This version supports command line arguments (options) and manages the process environment.
+.PP
+The execution logic follows these priorities:
+.IP 1.
+Check if the command is a \fBBuilt-in\fR (internal).
+.IP 2.
+Check if the command is a direct path (starts with / or .).
+.IP 3.
+Search for the command in the \fBPATH\fR directories.
+.SH FEATURES
+.SS Command Line Arguments
+The shell tokenizes the input string using a custom \fBtokenizer\fR, allowing commands to be executed with multiple options (e.g., \fIls -l /tmp\fR).
+.SS Built-in Commands
+The following command is executed internally:
+.TP
+.B env
+Prints the current environment variables to the standard output.
+.SH INVOCATION
+.B simple_shell
+works in two modes:
+.TP
+.B Interactive Mode
+Run \fI./hsh\fR. A prompt \fI$ \fR is displayed, and the shell waits for user input.
+.TP
+.B Non-Interactive Mode
+Commands can be piped: \fIecho "env" | ./hsh\fR. No prompt is shown in this mode.
+.SH ENVIRONMENT
+.TP
+.B PATH
+A list of directories the shell searches for executable files.
+.TP
+.B environ
+An array of strings representing the environment passed to executed programs.
+.SH DIAGNOSTICS
+When a command is not found, the shell prints an error message to \fIstderr\fR.
+.SH AUTHORS
+Written by Pasquiet Valentin et Masseron Axel.
+.SH SEE ALSO
+sh(1), env(1), execve(2), fork(2), wait(2)
