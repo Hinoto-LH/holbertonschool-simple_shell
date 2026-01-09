@@ -1,8 +1,17 @@
 #include "shell.h"
 
 /**
- * 
- * 
+ * main - Entry point for the simple shell program.
+ *
+ * Description: This function runs an infinite loop that:
+ * 1. Displays a prompt if the shell is in interactive mode.
+ * 2. Reads a command line from standard input.
+ * 3. Tokenizes the input into an array of arguments.
+ * 4. Checks if the command is a direct path or needs a PATH search.
+ * 5. Forks a child process to execute the command.
+ * 6. Frees allocated memory to prevent leaks.
+ *
+ * Return: Always 0 on success.
  */
 int main(void)
 {
