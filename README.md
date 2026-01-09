@@ -1,6 +1,4 @@
-## Title
-
-C - Simple Shell 
+### C - Simple Shell 
 
 ## Description of the project :
 
@@ -97,6 +95,7 @@ julien@ubuntu:/# echo "qwerty" | ./././hsh
 
 - @Axel MASSERRON : https://github.com/Hinoto-LH
 - @Valentin PASQUIET : https://github.com/ValPQT
+
 
 
 
