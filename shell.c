@@ -7,39 +7,31 @@
 int main(void)
 {
 	size_t len = 0;
-	char *line = NULL, *path_cmd;
+	char *line = NULL, *path_cmd, **argv;
 
 	while (1)
 	{
-		/* 1. afficher le prompt */
-		if (isatty(STDIN_FILENO))
-		{
-		write(STDOUT_FILENO, "$ ", 2);
-		}
+		if (isatty(STDIN_FILENO)) /* 1. afficher le prompt */
+			write(STDOUT_FILENO, "$ ", 2);
 
-		/* 2. lire la commande */
-		if (getline(&line, &len, stdin) == -1)
+		if (getline(&line, &len, stdin) == -1) /* 2. lire la commande */
 		{
-			/* Ctrl + D (EOF) */
-			if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "\n", 1);
+			if (isatty(STDIN_FILENO)) /* Ctrl + D (EOF) */
+				write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
 
-		/* 3. enlever le '\n' */
-		line[strcspn(line, "\n")] = '\0';
+		line[strcspn(line, "\n")] = '\0'; /* 3. enlever le '\n' */
 
-		/* 4. si ligne vide, afficher à nouveau le prompt */
-		if (line[0] == '\0')
+		if (line[0] == '\0') /* 4. si ligne vide, afficher à nouveau le prompt */
 			continue;
-		{
 
-		char **argv = tokenizer(line);
+		argv = tokenizer(line);
 
 		if (argv[0] != NULL) /* Si le nom contient un slash direct */
 		{
-			if (strcmp (argv[0], "exit") == 0)
-			break;
+			if (strcmp(argv[0], "exit") == 0)
+				break;
 
 			if (strchr(argv[0], '/') != NULL)
 				path_cmd = strdup(argv[0]); /* chemin donné directement*/
@@ -52,13 +44,8 @@ int main(void)
 				initializer(argv, EXTERNAL_COMMAND);
 				free(path_cmd);
 			}
-		else
-		{
-			fprintf(stderr, "%s: command not found\n", argv[0]);
 		}
-	}
-			free(argv);
-		}
+		free(argv);
 	}
 	free(line);
 	return (0);
