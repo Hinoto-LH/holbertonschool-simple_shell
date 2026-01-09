@@ -8,7 +8,7 @@
 char **tokenizer(char *line)
 {
 
-	size_t bufsize = 8;
+	size_t bufsize = 80;
 	size_t index = 0;
 	char *tok;
 
@@ -26,11 +26,11 @@ char **tokenizer(char *line)
 		args[index] = tok;
 		index++;
 
-		/*Si on dépasse la taille prévue, on réalloue plus d'espace*/
+		/* Si on dépasse la taille prévue, on réalloue plus d'espace */
 		if (index >= bufsize)
 		{
 			bufsize += 8;
-			args = realloc(args, bufsize * sizeof(char *));
+			args = _realloc(args, bufsize * sizeof(char *));
 			if (args == NULL)
 			{
 				perror("realloc");

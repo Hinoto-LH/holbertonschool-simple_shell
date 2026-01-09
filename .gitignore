@@ -11,3 +11,4 @@ hsh
 
 # Dossiers de debug ou logs
 *.log
+.vscode
