@@ -25,5 +25,7 @@ char **tokenizer(char *line);
 char *_getenv(const char *name);
 char *find_in_path(char *cmd);
 char **split_line(char *line);
+int builtin_env(void);
+
 
 #endif
