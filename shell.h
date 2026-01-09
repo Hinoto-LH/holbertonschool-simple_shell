@@ -27,5 +27,7 @@ char *find_in_path(char *cmd);
 char **split_line(char *line);
 int builtin_env(void);
 
+int _atoi(const char *str);
+int handle_exit(char **argv, char *line);
 
 #endif

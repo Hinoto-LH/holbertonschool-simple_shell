@@ -38,6 +38,9 @@ int main(void)
 
 		if (argv[0] != NULL) /* Si le nom contient un slash direct */
 		{
+			if (strcmp (argv[0], "exit") == 0)
+			break;
+
 			if (strchr(argv[0], '/') != NULL)
 				path_cmd = strdup(argv[0]); /* chemin donné directement*/
 			else
@@ -48,6 +51,10 @@ int main(void)
 				argv[0] = path_cmd;
 				initializer(argv, EXTERNAL_COMMAND);
 				free(path_cmd);
+			}
+		else
+		{
+			fprintf(stderr, "%s: command not found\n", argv[0]);
 		}
 	}
 			free(argv);
