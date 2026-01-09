@@ -28,11 +28,8 @@ int main(void)
 
 		argv = tokenizer(line);
 
-		if (argv[0] != NULL) /* Si le nom contient un slash direct */
+		if (argv[0] != NULL)
 		{
-			if (strcmp(argv[0], "exit") == 0)
-				break;
-
 			if (strchr(argv[0], '/') != NULL)
 				path_cmd = strdup(argv[0]); /* chemin donné directement*/
 			else
