@@ -21,7 +21,7 @@ int main(void)
 
 	while (1)
 	{
-		if (isatty(STDIN_FILENO))
+		if (isatty(STDIN_FILENO))/** ceci affiche le prompt */
 			write(STDOUT_FILENO, "$ ", 2);
 
 		if (getline(&line, &len, stdin) == -1)
