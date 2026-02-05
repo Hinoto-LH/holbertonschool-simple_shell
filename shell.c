@@ -26,7 +26,7 @@ int main(void)
 
 		if (getline(&line, &len, stdin) == -1)
 		{
-			if (isatty(STDIN_FILENO))
+			if (isatty(STDIN_FILENO))/** ceci affiche un prompt */
 				write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
